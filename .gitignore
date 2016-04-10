@@ -1,5 +1,5 @@
-/build/
-.classpath
 .settings
-.psd
+/build/
 .project
+.classpath
+.psd
