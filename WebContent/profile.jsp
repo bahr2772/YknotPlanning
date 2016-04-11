@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.Import"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html lang="en">
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -31,76 +34,87 @@
 </head>
 
 <body>
-
+	<c:if test="${sessionScope.login != 'loggedIn' }">
+		<c:redirect url="login.jsp" />
+	</c:if>
 	<%@include file="header.jsp"%>
-
-
-	<!-- Image Background Page Header -->
-	<!-- Note: The background image is set within the business-casual.css file. -->
-	<header class="business-header">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12">
-				<a href="./index.jsp"> <img alt="Yknot Planning"
-					src="./images/logo.png" id="loginLogo"></a>
-					<hr>
-			</div>
-		</div>
-	</div>
-	</header>
-
-
-
-	<br />
+	<br>
+	<br>
+	<br>
+	<br>
 	<br>
 
 
 	<!-- Page Content -->
 	<div class="container">
-		<div class="row">
+		<div class="container">
+			<div class="row">
 
 
-
-
-
-
-
-
-			<div class="col-sm-12 col-md-12 col-lg-12">
-				<div class="thumbnail">
-					
-					<img src="./images/yknotstudios.png" alt="..." id="profileImg">
-					<div class="row">
-					<div class="caption">
-						<div class="businessName"> Yknot Studios <br>
-						<div id="address">Farmginton, Mo 63640</div><br></div><br>
-						
-						<div class="businessType">Photographer </div>
-						<div class="businessContent">Specialize in Weddings. Indoor or Out.</div>
+				<c:if test="${not empty ven }">
+					<div
+						class="col-sm-offset-4 col-xs-offset-6  col-xs-6  col-sm-6 col-md-6">
+						<img src="${ven.profileImg}" alt="${ven.businessName}"
+							id="profileImgProfile">
 					</div>
-				
-					
-						
-					
 
+					<div class="row">
+						<div class="col-xs-12  col-sm-12 col-md-12">
+							<div class="businessNameProfile">${ven.businessName}</div>
+							<div id="address">${ven.city}, ${ven.state}    ${ven.zip}</div>
 
-						<div class="socialIcons">
-							<a href="http://www.facebook.com"><img alt="Facebook"
-								src="./images/facebook.png" id="socialIcons"></a> <a
-								href="http://www.Instagram.com"><img alt="Instagram"
-								src="./images/instagram.png" id="socialIcons"></a> <a
-								href="http://www.pinterest.com"><img alt="Pinterest"
-								src="./images/pinterest.png" id="socialIcons"></a> <a
-								href="http://www.twitter.com"><img alt="Twitter"
-								src="./images/twitter.png" id="socialIcons"></a> <a
-								href="http://www.youtube.com"><img alt="Youtube"
-								src="./images/youtube.png" id="socialIcons"></a>
-								<a href="mailto:"><img alt="Email"
-								src="./images/email.png" id="socialIcons"></a>
+							<div class="businessTypeProfile">${ven.category}</div>
+							<hr>
 						</div>
 					</div>
 
-				</div>
+					<div class="row">
+						<div class="col-xs-12  col-sm-6 col-md-4 packageInfo" >
+							Starting Cost:<br> $${ven.startingPackage}<br> Top Package Cost:<br>
+							$${ven.maxPackage}<br>
+
+
+
+							<div class="businessNameProfile"></div>
+						</div>
+
+
+
+
+						<div class="row">
+						<div class="col-xs-12  col-sm-12 col-md-12">
+							<hr>
+							</div>
+						</div>
+						<div class="col-sm-offset-6 col-xs-6 col-sm-6 col-md-6">
+
+							<c:if test="${ven.facebook != ' ' }">
+								<a href="http://www.facebook.com/${ven.facebook}"><img
+									alt="Facebook" src="./images/facebook.png" id="socialIcons"></a>
+							</c:if>
+							<c:if test="${ven.instagram != ' '}">
+								<a href="http://www.Instagram.com/${ven.instagram}"><img
+									alt="Instagram" src="./images/instagram.png" id="socialIcons"></a>
+							</c:if>
+							<c:if test="${ven.pintrest != ' '}">
+								<a href="http://www.pinterest.com/${ven.pintrest}"><img
+									alt="Pinterest" src="./images/pinterest.png" id="socialIcons"></a>
+							</c:if>
+							<c:if test="${ven.twitter != ' '}">
+								<a href="http://www.twitter.com/${ven.twitter}"><img
+									alt="Twitter" src="./images/twitter.png" id="socialIcons"></a>
+							</c:if>
+							<c:if test="${ven.youtube != ' '}">
+								<a href="http://www.youtube.com/${ven.youtube}"><img
+									alt="Youtube" src="./images/youtube.png" id="socialIcons"></a>
+							</c:if>
+							<c:if test="${ven.email != ' '}">
+								<a href="mailto:${ven.businessEmail}"><img
+									src="./images/email.png" alt="Email" id="socialIcons"></a>
+							</c:if>
+						</div>
+					</div>
+				</c:if>
 			</div>
 		</div>
 	</div>
@@ -110,12 +124,6 @@
 	<%@include file="footer.jsp"%>
 
 
-
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

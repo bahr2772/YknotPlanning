@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<c:forEach var="cookies" items="${cookie}">
+	<c:forEach var="cookies" items="${cookie}">
 		<c:if test="${cookies.key eq 'vendoremail'}">
 			<c:set var="vendoremailCookie" value="${cookies.value.value}" />
 		</c:if>
@@ -52,8 +52,8 @@
 
 
 		<div class="row" id="LoginBody">
-		
-		
+
+
 			<h1>Vendor Login</h1>
 
 			<c:if test="${sessionScope.vLogin == 'loggedIn'}">
@@ -73,7 +73,7 @@
 			</c:if>
 
 			<div class="col-lg-12 ">
-			<hr>
+				<hr>
 				<div class="col-xs-7" id="loginForm">
 
 					<form class="form-horizontal" action="VendorLogin" method="post">
@@ -95,9 +95,12 @@
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-12">
 								<div id="checkbox">
-									<label> <input type="checkbox" name="box" value="remember" <c:if test="${vendoremailCookie!=null}">checked</c:if>>
-										Remember me<br><br> <a href="lostpassword.jsp?type=vendor"
-										id="lostPass">lost password?</a>
+									<label> <input type="checkbox" name="box"
+										value="remember"
+										<c:if test="${vendoremailCookie!=null}">checked</c:if>>
+										Remember me<br>
+									<br> <a href="lostpassword.jsp?type=vendor" id="lostPass">lost
+											password?</a>
 										<div class="col-sm-offset-2 col-sm-10">
 											<br>
 											<button type="submit" class="btn btn-default">Sign

@@ -18,7 +18,7 @@
 			<p>&copy; Yknot Planning 2016</p>
 		</div>
 	</c:if>
-	
+
 	<c:if test="${vLogin == 'loggedIn' }">
 		<div class="footer" id="MainFooter">
 			<p>&copy; Yknot Planning 2016</p>

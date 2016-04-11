@@ -19,7 +19,8 @@
 <link href="css/bootstrap.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Mate+SC'
+	rel='stylesheet' type='text/css'>
 <link href="css/style.css" rel="stylesheet">
 
 
@@ -228,7 +229,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
-	
+
 <script>
 $('#roleList li').on('click', function(){
     $('#role').val($(this).text());

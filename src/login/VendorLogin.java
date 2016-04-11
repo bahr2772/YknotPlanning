@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Vendor;
 import sql.GetInfo;
+import sql.MakeVendor;
 
 /**
  * Servlet implementation class VendorLogin
@@ -71,6 +72,11 @@ public class VendorLogin extends HttpServlet {
 
 		// user name is in DB, password correct, login
 		case 1:
+			MakeVendor mkVendor = new MakeVendor();
+			
+			
+			session.setAttribute("vendor", mkVendor.vendorInfo(email, vendor));
+			
 			if (useCookies){								// user has chosen to be remembered
 				Cookie cookieE = new Cookie("vendoremail",email);
 				Cookie cookieP = new Cookie("vendorpassword",password);

@@ -1,7 +1,19 @@
 @CHARSET "UTF-8";
 
-.logOut{
+.logOut {
 	margin-top: 7px;
+}
+
+.pageNumber {
+	margin-left: 35%;
+	margin-right: auto;
+}
+
+.noSearch {
+	font-family: 'Mate SC', serif;
+	font-size: 1em;
+	font-weight: 300;
+	text-align: center;
 }
 
 .thumbnail img {
@@ -11,15 +23,36 @@
 	min-width: 150px;
 	width: 150px;
 }
-.checklist label{
+
+.checklist label {
 	font-family: 'Mate SC', serif;
 	font-size: 1em;
 	font-weight: 300;
 }
-.budget h3{
+
+.budget h3 {
 	text-align: center;
 	font-family: 'Mate SC', serif;
 	font-size: 1.5em;
+	font-weight: 300;
+}
+.packageInfo{
+	font-size: 1.5em;
+	font-family: 'Mate SC', serif;
+	font-weight: 300;
+}
+.businessNameProfile {
+	float: left;
+	font-size: 2em;
+	font-family: 'Mate SC', serif;
+	font-weight: 300;
+}
+
+.businessTypeProfile {
+	margin-top: -20px;
+	float: right;
+	font-size: 2em;
+	font-family: 'Mate SC', serif;
 	font-weight: 300;
 }
 
@@ -35,10 +68,25 @@
 	border-style: solid;
 	box-shadow: 3px 3px 5px #999
 }
-.checklistBtn{
-	width: 75%:
-	
+
+#profileImgProfile {
+	margin-top: -60px;
+	margin-left: 35px;
+	/*     margin-left: -90px; */
+	width: 200px;
+	padding: 20px;
+	background-color: white;
+	border-radius: 5px;
+	border-color: black;
+	border-width: thin;
+	border-style: solid;
+	box-shadow: 3px 3px 5px #999
 }
+
+.checklistBtn {
+	width: 75%:
+}
+
 .facebook {
 	position: relative;
 	top: 6px;
@@ -47,36 +95,38 @@
 	-moz-osx-font-smoothing: grayscale;
 	background-image: url("../images/facebook.svg");
 }
-#address{
-	text-align: center;
-	font-size: .5em;
-	
+
+#address {
+	margin-top: 10px;
+	margin-left: 44%;
+	font-size: 1em;
+	font-family: 'Mate SC', serif;
+	font-weight: 300;
 }
-#logout{
+
+#logout {
 	float: right;
 }
+
 #zipCode {
 	margin-left: 10px;
 }
 
 .businessType {
-/* 	postion: relative; */
-/* 	display: inline; */
-/* 	padding: 20px; */
 	margin-top: -50px;
-/* 	float: right; */
 	font-family: 'Mate SC', serif;
 	font-size: 2.0em;
 	font-weight: 300;
 }
+
 .checklist h3 {
 	font-family: 'Mate SC', serif;
 	text-align: center;
 	font-size: 1.5em;
 	font-weight: 600;
 }
-.businessName {
 
+.businessName {
 	font-family: 'Mate SC', serif;
 	font-size: 1.75em;
 	font-weight: 300;
@@ -100,14 +150,11 @@
 
 .socialIcons {
 	display: inline-block;
-	float: right;
-	margin: 15px;
+	float: rights margin: 15px;
 }
-
 
 body {
 	margin-top: 90px;
-	
 }
 /* PAGE CONTENT */
 border-left: thick solid #ff0000 ; #loginEmail, #loginPassword {
@@ -172,24 +219,25 @@ border-left: thick solid #ff0000 ; #loginEmail, #loginPassword {
 /* .navbar-inverse .navbar-nav li a:hover { */
 /* 	color: blue; */
 /* } */
-
 .navbar-brand {
 	margin: 10px;
 	padding: 10px;
 }
-.navbar-default{
+
+.navbar-default {
 	width: 100%;
 }
-#search{
+
+#search {
 	float: right;
 	width: 100px;
 }
 
- #navWidth{
- width: 100%;
- align-content: center;
- background-color: red;
- }
+#navWidth {
+	width: 100%;
+	align-content: center;
+	background-color: red;
+}
 /* HEADERS */
 .business-header {
 	height: auto;
@@ -206,7 +254,6 @@ border-left: thick solid #ff0000 ; #loginEmail, #loginPassword {
 }
 
 #brandLogo {
-	
 	margin-top: -12px;
 	width: 125px;
 }

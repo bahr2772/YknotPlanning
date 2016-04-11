@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<%@page import="org.apache.jasper.tagplugins.jstl.core.Import"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<html lang="en">
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<script src="js/bootstrap.js"></script>
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="Yknot Studios">
-
-<title>Yknot Planning: Vendor Register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Yknot Planning: Vendor Profile</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -52,54 +45,63 @@
 </head>
 
 <body>
-	<c:if test="${sessionScope.vLogin == 'loggedIn' }">
-		<c:redirect url="vendor.jsp" />
+	<c:if test="${sessionScope.vLogin != 'loggedIn' }">
+		<c:redirect url="vendorlogin.jsp" />
 	</c:if>
 	<%@include file="header.jsp"%>
 
 
 	<!-- Page Content -->
 	<div class="container">
-		<h1 class="" id="join">Register Your Business</h1>
+		<h1 class="" id="join">Update Your Business Information</h1>
 		<div class="col-lg-12 ">
 			<div class="row">
+			<c:if test="${vpro == 'success' }">
+					<div class="alert alert-success" role="alert">
+						<span class="glyphicon  glyphicon-ok" aria-hidden="true"></span> <span
+							class="sr-only">Update Successful</span> Your Profile has
+						Successfully been updated!
+						<c:remove var="vpro" scope="session" />
+					</div>
+				</c:if>
+			</div>
 
-				<c:if test="${sessionScope.vLogin == 'error' }">
+				<c:if test="${vpro == 'error' }">
 					<div class="alert alert-danger" role="alert">
 						<span class="glyphicon glyphicon-exclamation-sign"
 							aria-hidden="true"></span> <span class="sr-only">Error:</span>
 						Please fill in the following:
 						<c:if test="${email != null}">
-							<c:out value="${email}," />
+							${email}
 						</c:if>
 						<c:if test="${password1 != null}">
-							<c:out value="${password1}," />
+							${password1}
 						</c:if>
 						<c:if test="${password2 != null}">
-							<c:out value="${password2}," />
+							${password2}
 						</c:if>
 						<c:if test="${businessName != null}">
-							<c:out value="${businessName}," />
+							${businessName}
 						</c:if>
 						<c:if test="${businessEmail != null}">
-							<c:out value="${businessEmail}," />
+							${businessEmail}
 						</c:if>
 						<c:if test="${city != null}">
-							<c:out value="${city}," />
+							${city}
 						</c:if>
 						<c:if test="${state != null}">
-							<c:out value="${state}," />
+							${state}
 						</c:if>
 						<c:if test="${zip != null}">
-							<c:out value="${zip}," />
+							${zip}
 						</c:if>
 						<c:if test="${category != null}">
-							<c:out value="${category}," />
+							${category}
 						</c:if>
 						<c:if test="${businessWebsite != null}">
-							<c:out value="${businessWebsite}" />
+							${businessWebsite}" />
 						</c:if>
-						<c:set var="vLogin" value="" />
+						<c:remove var="vpro"  />
 					</div>
 				</c:if>
 				<c:if test="${sessionScope.vLogin == 'userInDb' }">
@@ -135,7 +137,7 @@
 				</c:if>
 			</div>
 			<div class="row">
-				<form action="VendorRegisterServlet" method="POST"
+				<form action="VendorUpdateServlet" method="POST"
 					id="VendorRegister" data-toggle="validator">
 					<div class="col-sm-12">
 						<div class="row">
@@ -143,34 +145,23 @@
 								<label>Email*</label> <input type="email"
 									placeholder="Enter Email Here.." class="form-control"
 									name="email"
-									value='<c:if test="${vendor.getEmail() != null}"><c:out value="${vendor.getEmail()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.email != null}">${vendor.email}</c:if>' readonly>
 							</div>
 						</div>
 
-						<div class="row">
-							<div class="col-sm-6 form-group">
-								<label>Password*</label> <input type="password"
-									placeholder="Enter Password Here.." class="form-control"
-									name="password">
-							</div>
-							<div class="col-sm-6 form-group">
-								<label>Confirm Password*</label> <input type="password"
-									placeholder="Confirm your Password Here.." class="form-control"
-									name="confirmPassword">
-							</div>
-						</div>
+						
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>Business Name*</label> <input type="text"
 									placeholder="Enter Business Name Here.." class="form-control"
 									name="businessName"
-									value='<c:if test="${vendor.getBusinessName() != null}"><c:out value="${vendor.getBusinessName()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.businessName != null}">${vendor.businessName}</c:if>'>
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>Business Email*</label> <input type="email"
 									placeholder="Enter Business Email Here.." class="form-control"
 									name="businessEmail"
-									value='<c:if test="${vendor.getBusinessEmail() != null}"><c:out value="${vendor.getBusinessEmail()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.getBusinessEmail() != null}">${vendor.getBusinessEmail()}</c:if>'>
 							</div>
 						</div>
 
@@ -179,19 +170,19 @@
 								<label>City*</label> <input type="text"
 									placeholder="Enter City Name Here.." class="form-control"
 									name="city"
-									value='<c:if test="${vendor.getCity() != null}"><c:out value="${vendor.getCity()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.city != null}">${vendor.city}</c:if>'>
 							</div>
 							<div class="col-sm-4 form-group">
 								<label>State*</label> <input type="text"
 									placeholder="Enter State Name Here.." class="form-control"
 									name="state"
-									value='<c:if test="${vendor.getState() != null}"><c:out value="${vendor.getState()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.state != null}">${vendor.state}</c:if>'>
 							</div>
 							<div class="col-sm-4 form-group">
 								<label>Zip*</label> <input type="text"
 									placeholder="Enter Zip Code Here.." name="zip"
 									class="form-control" name="Zip"
-									value='<c:if test="${vendor.getZip() != null}"><c:out value="${vendor.getZip()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.zip != null}">${vendor.zip}</c:if>'>
 							</div>
 						</div>
 						<div class="row">
@@ -201,7 +192,7 @@
 									<input type="TextBox" ID="vendors" name="vendors"
 										Class="form-control"
 										placeholder="Select the Category of your Business.."
-										value=<c:if test="${vendor.getCategory() != null}"><c:out value="${vendor.getCategory()}"></c:out></c:if>>
+										value=<c:if test="${vendor.category != null}">${vendor.category}</c:if>>
 									<div class="input-group-btn">
 										<button type="button" class="btn btn-primary "
 											data-toggle="dropdown" id="dropList">
@@ -239,7 +230,7 @@
 										</div>
 										<input type="text" placeholder="Enter Website address Here.."
 											name="businessWebsite" class="form-control"
-											value='<c:if test="${vendor.getBusinessWebsite() != null}"><c:out value="${vendor.getBusinessWebsite()}"></c:out></c:if>' />
+											value='<c:if test="${vendor.businessWebsite != null}">${vendor.businessWebsite}</c:if>' />
 									</div>
 								</div>
 							</div>
@@ -247,13 +238,13 @@
 								<label>Facebook Page</label> <input type="text"
 									placeholder="Enter info after ...facebook.com/" name="facebook"
 									class="form-control"
-									value='<c:if test="${vendor.getFacebook() != null}"><c:out value="${vendor.getFacebook()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.facebook != null}">${vendor.facebook}</c:if>'>
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>Pintrest</label> <input type="text"
 									placeholder="Enter Pintrest Username" name="pintrest"
 									class="form-control"
-									value='<c:if test="${vendor.getPintrest() != null}"><c:out value="${vendor.getPintrest()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.pintrest != null}">${vendor.pintrest}</c:if>'>
 							</div>
 						</div>
 						<div class="row">
@@ -261,13 +252,13 @@
 								<label>Twitter</label> <input type="text"
 									placeholder="Enter Twitter Username" name="twitter"
 									class="form-control"
-									value='<c:if test="${vendor.getTwitter() != null}"><c:out value="${vendor.getTwitter()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.twitter != null}">${vendor.twitter}</c:if>'>
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>YouTube</label> <input type="text"
 									placeholder="Enter YouTube Username" name="youtube"
 									class="form-control"
-									value='<c:if test="${vendor.getYoutube() != null}"><c:out value="${vendor.getYoutube()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.youtube != null}">${vendor.youtube}</c:if>'>
 							</div>
 						</div>
 						<div class="row">
@@ -275,14 +266,14 @@
 								<label>Instagram</label> <input type="text"
 									placeholder="Enter Instagram Username" name="instagram"
 									class="form-control"
-									value='<c:if test="${vendor.getInstagram() != null}"><c:out value="${vendor.getInstagram()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.instagram != null}">${vendor.instagram}</c:if>'>
 							</div>
 
 							<div class="col-sm-6 form-group">
 								<label>Profile Image Url</label> <input type="text"
 									placeholder="Enter Link to your Profile Image"
 									name="profileImg" class="form-control"
-									value='<c:if test="${vendor.getProfileImg() != null}"><c:out value="${vendor.getProfileImg()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.profileImg != null}">${vendor.profileImg}</c:if>'>
 							</div>
 						</div>
 						<div class="row">
@@ -290,20 +281,20 @@
 								<label>Starting Package*</label> <input type="text"
 									placeholder="Enter your Starting Pacakge"
 									name="startingPackage" class="form-control"
-									value='<c:if test="${vendor.getStartingPackage() != null}"><c:out value="${vendor.getStartingPackage()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.startingPackage  != null}">${vendor.startingPackage }</c:if>'>
 							</div>
 
 							<div class="col-sm-6 form-group">
 								<label>Top Package*</label> <input type="text"
 									placeholder="Enter your Highest Package amount"
 									name="topPackage" class="form-control"
-									value='<c:if test="${vendor.getMaxPackage() != null}"><c:out value="${vendor.getMaxPackage()}"></c:out></c:if>'>
+									value='<c:if test="${vendor.maxPackage != null}">${vendor.maxPackage }</c:if>'>
 							</div>
 						</div>
 					</div>
 			</div>
 			<div class="col-sm-offset-5 col-sm-10">
-				<button type="submit" class="btn btn-lg btn-info">Submit</button>
+				<button type="submit" class="btn btn-lg btn-info">Update</button>
 			</div>
 		</div>
 		</form>

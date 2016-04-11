@@ -59,7 +59,6 @@ public class FindVendorMatches {
 
 
 		}
-		System.out.println(vendorMatches.size());
 		return vendorMatches;
 		
 		}

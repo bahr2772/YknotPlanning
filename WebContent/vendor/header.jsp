@@ -71,7 +71,7 @@
 	</c:if>
 
 	<!-- VENDOR LINKS -->
-	
+
 
 
 	<c:if test="${vLogin == 'loggedIn'}">

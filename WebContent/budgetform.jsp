@@ -118,7 +118,9 @@
 							</div>
 
 							<div class="col-sm-offset-0 col-sm-3">
-							<a href="VendorMatchesServlet"><button type="button" class="btn btn-lg btn-info">View Vendors in your Budget</button></a>
+								<a href="VendorMatchesServlet"><button type="button"
+										class="btn btn-lg btn-info">View Vendors in your
+										Budget</button></a>
 							</div>
 							<div class="col-sm-offset-5 col-sm-3">
 								<a class="btn btn-primary btn-lg"

@@ -45,6 +45,12 @@ public class MakeVendorList {
 					vendors.setProfileImg(r1.getString("profileImg"));
 					vendors.setStartingPackage(r1.getString("startingPackage"));
 					vendors.setMaxPackage(r1.getString("topPackage"));
+					
+					vendors.setFacebook(r1.getString("facebook"));
+					vendors.setTwitter(r1.getString("twitter"));
+					vendors.setPintrest(r1.getString("pintrest"));
+					vendors.setInstagram(r1.getString("instagram"));
+					vendors.setYoutube(r1.getString("youtube"));
 
 					vendorList.add(vendors);
 			    } while (r1.next());

@@ -26,52 +26,59 @@
 			me here? Well, we will take it and find vendors that match the style
 			you select, the budget you set, and coming soon...matched only to
 			those vendors that are available on your wedding day... <br> <br>
-			
-			
+
+
 		</blockquote>
 		<div class="col-lg-12 ">
 			<div class="row">
 				<div class="col-md-4 budget">
-				<h3>* Have 5 - 10 minutes? Take it now, and we will walk with you. <br></h3>
+					<h3>
+						* Have 5 - 10 minutes? Take it now, and we will walk with you. <br>
+					</h3>
 					<a href="budgetsurveystart.jsp"><button type="button"
 							class="btn btn-lg btn-info">Start Budget Survey</button></a>
 				</div>
 				<div class="col-md-4"></div>
-				
-			<c:if test="${client.budget == '0' }">
-				<div class="col-md-4 budget">
-				<h3>* Short on time?<br>Give us your max budget and we will get vendors that are just in your budget...<br></h3>
-					<form action="BudgetMakerServlet" method="POST">
-					<div class="input-group">
-						<input type="text" class="form-control"
-							placeholder="Enter your Max Budget.." name="maxbudget"> <span
-							class="input-group-btn">
-							<button class="btn btn-default budget" type="submit">Go!</button>
-						</span>
+
+				<c:if test="${client.budget == '0' }">
+					<div class="col-md-4 budget">
+						<h3>
+							* Short on time?<br>Give us your max budget and we will get
+							vendors that are just in your budget...<br>
+						</h3>
+						<form action="BudgetMakerServlet" method="POST">
+							<div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Enter your Max Budget.." name="maxbudget">
+								<span class="input-group-btn">
+									<button class="btn btn-default budget" type="submit">Go!</button>
+								</span>
+							</div>
+						</form>
+
+						<!-- /input-group -->
 					</div>
-					</form>
-					
-					<!-- /input-group -->
-				</div>
 				</c:if>
-				
-					<c:if test="${client.budget != '0' }">
-				<div class="col-md-4 budget">
-				<h3><br>Update your budget or just hit go.<br></h3>
-					<form action="BudgetMakerServlet" method="POST">
-					<div class="input-group">
-						<input type="text" class="form-control"
-							placeholder="Enter your Max Budget.." value="${client.budget}" name="maxbudget"> <span
-							class="input-group-btn">
-							<button class="btn btn-default budget" type="submit">Go!</button>
-						</span>
+
+				<c:if test="${client.budget != '0' }">
+					<div class="col-md-4 budget">
+						<h3>
+							<br>Update your budget or just hit go.<br>
+						</h3>
+						<form action="BudgetMakerServlet" method="POST">
+							<div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Enter your Max Budget.." value="${client.budget}"
+									name="maxbudget"> <span class="input-group-btn">
+									<button class="btn btn-default budget" type="submit">Go!</button>
+								</span>
+							</div>
+						</form>
+
+						<!-- /input-group -->
 					</div>
-					</form>
-					
-					<!-- /input-group -->
-				</div>
 				</c:if>
-				
+
 				<!-- /.col-lg-6 -->
 
 				<div class="row"></div>

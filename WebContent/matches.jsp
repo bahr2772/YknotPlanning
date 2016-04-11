@@ -73,7 +73,7 @@
 					<div class="col-xs-10  col-sm-6 col-md-4 vendorFeed">
 
 						<div class="thumbnail">
-							<a href="/vendor/${vendors.businessName}"> <img
+							<a href="profile?vendor=${vendors.businessName}"> <img
 								src="${vendors.profileImg }" alt="${vendors.businessName }"
 								id="">
 							</a>
@@ -98,13 +98,29 @@
 						</div>
 					</div>
 					<c:if test="${colcount == '2'}">
-						</div>
-					</c:if>
-			<c:set var="colcount" value="${colcount + 1}" scope="page" />
-			</c:forEach>
-		</div>
-		</div>
+			</div>
+	</c:if>
+	<c:set var="colcount" value="${colcount + 1}" scope="page" />
 
+	</c:forEach>
+	</div>
+	</div>
+	<div class="row pageNumber">
+		<nav>
+			<ul class="pagination">
+				<li><a href="#" aria-label="Previous"> <span
+						aria-hidden="true">&laquo;</span>
+				</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+				</a></li>
+			</ul>
+		</nav>
+	</div>
 	</c:if>
 
 	<!-- /.container -->

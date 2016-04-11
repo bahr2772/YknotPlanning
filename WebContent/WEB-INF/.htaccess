@@ -1,0 +1,10 @@
+# Turn Rewrite Engine On
+RewriteEngine on
+
+
+# NC makes the rule non case sensitive
+# L makes this the last rule that this specific condition will match
+# $ in the regular expression makes the matching stop so that "customblah" will not work
+
+# Rewrite for profile?vendor= NAME
+RewriteRule ^vendor/([0-9a-zA-Z_-]+)$ profile.jsp?vendor=$1 [NC,L]

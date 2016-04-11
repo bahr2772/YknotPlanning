@@ -47,7 +47,7 @@
 	<%@include file="header.jsp"%>
 
 
-	
+
 	<!-- Page Content -->
 	<div class="container">
 
@@ -71,7 +71,7 @@
 				</div>
 			</c:if>
 			<div class="col-lg-12 ">
-			<hr>
+				<hr>
 				<div class="col-xs-7" id="loginForm">
 
 
@@ -99,7 +99,9 @@
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-12">
 								<div id="checkbox">
-									<label> <input type="checkbox" name="box" value="remember" <c:if test="${clientemailCookie!=null}">checked</c:if>>
+									<label> <input type="checkbox" name="box"
+										value="remember"
+										<c:if test="${clientemailCookie!=null}">checked</c:if>>
 										Remember me<br> <a href="lostpassword.jsp?type=client"
 										id="lostPass">lost password?</a>
 										<div class="col-sm-offset-2 col-sm-10">
@@ -132,7 +134,8 @@
 	<!-- Footer -->
 	<%@include file="footer.jsp"%>
 
-	<!-- jQuery -->w
+	<!-- jQuery -->
+	w
 	<script src="./js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->

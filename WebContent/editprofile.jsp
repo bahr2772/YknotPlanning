@@ -18,7 +18,8 @@
 <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
 
 <!-- Custom CSS -->
-<link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Mate+SC'
+	rel='stylesheet' type='text/css'>
 <link href="css/style.css" rel="stylesheet">
 
 
@@ -58,14 +59,14 @@
 
 				<c:if test="${update == 'yes' }">
 					<div class="alert alert-success" role="alert">
-						<span class="glyphicon  glyphicon-ok"
-							aria-hidden="true"></span> <span class="sr-only">Update Successful</span>
-							Your Profile has Successfully been updated!
-						 <c:remove var="update" scope="session" />
+						<span class="glyphicon  glyphicon-ok" aria-hidden="true"></span> <span
+							class="sr-only">Update Successful</span> Your Profile has
+						Successfully been updated!
+						<c:remove var="update" scope="session" />
 					</div>
 				</c:if>
 			</div>
-			
+
 			<div class="row">
 				<form action="UpdateClientProfileServlet" method="POST"
 					id="clientRegister" data-toggle="validator">
@@ -74,8 +75,9 @@
 							<div class="col-sm-12  form-group">
 								<label>Email*</label> <input type="email"
 									placeholder="Enter Email Here.." class="form-control"
-									name="email" 
-									value='<c:if test="${client.email != null}"><c:out value="${client.email}"></c:out></c:if>' readonly>
+									name="email"
+									value='<c:if test="${client.email != null}"><c:out value="${client.email}"></c:out></c:if>'
+									readonly>
 							</div>
 						</div>
 
@@ -156,7 +158,8 @@
 							</div>
 						</div>
 						<div class="col-sm-offset-4 col-sm-10">
-							<button type="submit" class="btn btn-lg btn-info">Update Profile</button>
+							<button type="submit" class="btn btn-lg btn-info">Update
+								Profile</button>
 						</div>
 					</div>
 				</form>
@@ -187,7 +190,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
-	
+
 <script>
 $('#roleList li').on('click', function(){
     $('#role').val($(this).text());

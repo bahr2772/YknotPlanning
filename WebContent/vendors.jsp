@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="Yknot Studios">
 
-<title>Yknot Planning: Client Login</title>
+<title>Yknot Planning: Vendors</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
