@@ -49,7 +49,7 @@ public class Search extends HttpServlet {
 
 			String searchParm = (ven.getBusinessEmail().toUpperCase() + " " + ven.getBusinessName().toUpperCase() + " " + ven.getBusinessWebsite().toUpperCase() + " " + ven.getCategory().toUpperCase() + " " + ven.getCity().toUpperCase()
 					+ " " + ven.getFacebook().toUpperCase() + " " + ven.getInstagram().toUpperCase() + " " + ven.getMaxPackage().toUpperCase() + " " + ven.getPintrest().toUpperCase() + " " +ven.getStartingPackage().toUpperCase() + " " + 
-					ven.getState().toUpperCase() + " " + ven.getTwitter().toUpperCase() + " " + ven.getYoutube().toUpperCase() + " " + ven.getZip().toUpperCase());
+					ven.getState().toUpperCase() + " " + ven.getTwitter().toUpperCase() + " " + ven.getYoutube().toUpperCase() + " " + ven.getZip().toUpperCase() + " " + ven.getAbout().toUpperCase());
 					
 					
 			if(searchParm.toUpperCase().contains(search.toUpperCase())){

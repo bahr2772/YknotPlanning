@@ -1,13 +1,133 @@
 package model;
 
+
 public class User {
 
-	
-	private String username, password, email, firstName, lastName, city, state, zip, role, weddingDate, checklist,budget;
-	
-	
-	
-//	********		GETTERS AND SETTERS			*********
+
+	private String username, password, email, firstName, lastName, city, state, zip, role, weddingDate, checklist, budget;
+	private String month12, month11, month10, month9, month8, month6, month5, month4, month3, month2, week6, week4, week2; 
+
+
+	//	********		GETTERS AND SETTERS			*********
+
+
+
+	public String getMonth12() {
+
+		return month12;
+	}
+
+	public void setMonth12(String month12) {
+		this.month12 = month12;
+	}
+
+	public String getMonth11() {
+
+		return month11 ;
+	}
+
+	public void setMonth11(String month11) {
+		this.month11 = month11;
+	}
+
+	public String getMonth10() {
+
+		return month10 ;
+	}
+
+	public void setMonth10(String month10) {
+		this.month10 = month10;
+	}
+
+	public String getMonth9() {
+
+		return  month9 ;
+	}
+
+	public void setMonth9(String month9) {
+		this.month9 = month9;
+	}
+
+	public String getMonth8() {
+
+		return  month8 ;
+	}
+
+	public void setMonth8(String month8) {
+		this.month8 = month8;
+	}
+
+	public String getMonth6() {
+
+		return  month6 ;
+	}
+
+	public void setMonth6(String month6) {
+		this.month6 = month6;
+	}
+
+	public String getMonth5() {
+
+		return  month5 ;
+	}
+
+	public void setMonth5(String month5) {
+		this.month5 = month5;
+	}
+
+	public String getMonth4() {
+
+		return  month4 ;
+	}
+
+	public void setMonth4(String month4) {
+		this.month4 = month4;
+	}
+
+	public String getMonth3() {
+
+		return  month3 ;
+	}
+
+	public void setMonth3(String month3) {
+		this.month3 = month3;
+	}
+
+	public String getMonth2() {
+
+		return  month2 ;
+	}
+
+	public void setMonth2(String month2) {
+		this.month2 = month2;
+	}
+
+	public String getWeek6() {
+
+		return  week6 ;
+	}
+
+	public void setWeek6(String week6) {
+		this.week6 = week6;
+	}
+
+	public String getWeek4() {
+
+		return  week4 ;
+	}
+
+	public void setWeek4(String week4) {
+		this.week4 = week4;
+	}
+
+	public String getWeek2() {
+
+		return  week2 ;
+	}
+
+	public void setWeek2(String week2) {
+		this.week2 = week2;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -104,5 +224,5 @@ public class User {
 	public void setBudget(String budget) {
 		this.budget = budget;
 	}
-	
+
 }

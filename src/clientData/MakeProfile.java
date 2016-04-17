@@ -29,7 +29,7 @@ public class MakeProfile {
 				ven.setTwitter(vendor.getTwitter());
 				ven.setYoutube(vendor.getYoutube());
 				ven.setInstagram(vendor.getInstagram());
-				System.out.println((vendor.getInstagram()));
+				ven.setAbout(vendor.getAbout());
 				
 				ven.setProfileImg(vendor.getProfileImg());
 				break;

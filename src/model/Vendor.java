@@ -2,7 +2,7 @@ package model;
 
 public class Vendor {
 
-		private String startingPackage, maxPackage, facebook, youtube, pintrest, twitter, instagram, email, zip, businessName, businessEmail, city, state, category, businessWebsite, password, profileImg;
+		private String startingPackage,about, maxPackage, facebook, youtube, pintrest, twitter, instagram, email, zip, businessName, businessEmail, city, state, category, businessWebsite, password, profileImg;
 		
 		public String getZip() {
 			return zip;
@@ -17,6 +17,9 @@ public class Vendor {
 			this.email = email;
 		}
 		public String getBusinessName() {
+//			if(businessName.contains("'"))
+//				businessName = businessName.replace("'", "\'");
+				
 			return businessName;
 		}
 		public void setBusinessName(String businessName) {
@@ -105,6 +108,12 @@ public class Vendor {
 		}
 		public void setMaxPackage(String maxPackage) {
 			this.maxPackage = maxPackage;
+		}
+		public String getAbout() {
+			return about;
+		}
+		public void setAbout(String about) {
+			this.about = about;
 		}
 		
 		

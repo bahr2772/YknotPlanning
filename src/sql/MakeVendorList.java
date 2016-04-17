@@ -51,6 +51,7 @@ public class MakeVendorList {
 					vendors.setPintrest(r1.getString("pintrest"));
 					vendors.setInstagram(r1.getString("instagram"));
 					vendors.setYoutube(r1.getString("youtube"));
+					vendors.setAbout(r1.getString("about"));
 
 					vendorList.add(vendors);
 			    } while (r1.next());

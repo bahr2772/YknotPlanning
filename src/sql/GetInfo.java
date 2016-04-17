@@ -303,17 +303,6 @@ public int vendorLogin (String Email, String password, Vendor vendorModel){
 				zip = r1.getString("zip");
 				phoneNum =  r1.getString("phone");
 
-
-//				setFirst_name(firstName);
-//				setLast_name(lastName);
-//				setAddress(address);
-//				setCity(city);
-//				setState(state);
-//				setZip(zip);
-//				setUsername(user);
-//				setPassword(pass);
-//				setPhone(phoneNum);
-//				setEmail(email);
 			}
 			conn.close();
 		}
@@ -327,7 +316,7 @@ public int vendorLogin (String Email, String password, Vendor vendorModel){
 
 	public int newVendor(String password1, String password2, String email, String businessName, String businessEmail,
 			String city, String state, String zip, String category, String businessWebsite, String businessFacebook, String businessInstagram, 
-			String businessPintrest, String businessYoutube, String businessTwitter, String businessProfile, String startingPackage, String maxPackage) {
+			String businessPintrest, String businessYoutube, String businessTwitter, String businessProfile, String startingPackage, String maxPackage, String about) {
 
 		boolean check = VendorCredChecker(email,"Vendors");
 
@@ -359,9 +348,8 @@ public int vendorLogin (String Email, String password, Vendor vendorModel){
 			
 			newVendor.writeSql( password1, email,  businessName, 
 					businessEmail,  city,  state,  zip,  category,  businessWebsite, businessFacebook, businessInstagram, businessPintrest
-					,businessYoutube, businessTwitter, businessProfile, startingPackage, maxPackage);
+					,businessYoutube, businessTwitter, businessProfile, startingPackage, maxPackage, about);
 
-			System.out.println("User created");
 			return 6;
 		}
 	}

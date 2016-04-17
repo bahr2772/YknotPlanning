@@ -64,6 +64,7 @@
 
 
 					<h3>12 Months Before...</h3>
+					<div class="date">${client.month12}</div>
 					<div class="checkbox"></div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c5"
@@ -98,6 +99,7 @@
 
 
 					<h3>11 Months Before...</h3>
+					<div class="date">${client.month11}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c11"
 							<c:if test="${c11 == '1' }" >checked</c:if>>Plan Decor
@@ -120,6 +122,7 @@
 
 				<div class="col-md-3 col-sm-5 col-xs-12 checklist">
 					<h3>10 Months Before...</h3>
+					<div class="date">${client.month10}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c14"
 							<c:if test="${c14 == '1' }" >checked</c:if>>Finalize
@@ -146,6 +149,7 @@
 
 
 					<h3>9 Months Before...</h3>
+					<div class="date">${client.month9}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c18"
 							<c:if test="${c18 == '1' }" >checked</c:if>>Order Dress
@@ -157,6 +161,7 @@
 
 
 					<h3>8 Months Before...</h3>
+					<div class="date">${client.month8}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c19"
 							<c:if test="${c19 == '1' }" >checked</c:if>>Choose
@@ -173,6 +178,7 @@
 
 
 					<h3>6 Months Before...</h3>
+					<div class="date">${client.month6}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c21"
 							<c:if test="${c21 == '1' }" >checked</c:if>>Edit, Proof,
@@ -191,6 +197,7 @@
 
 				<div class="col-md-3 col-sm-5 col-xs-12 checklist">
 					<h3>5 Months Before...</h3>
+					<div class="date">${client.month5}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c23"
 							<c:if test="${c23 == '1' }" >checked</c:if>>Make any
@@ -206,6 +213,7 @@
 
 
 					<h3>4 Months Before...</h3>
+					<div class="date">${client.month4}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c25"
 							<c:if test="${c25 == '1' }" >checked</c:if>>Choose
@@ -226,6 +234,7 @@
 
 
 					<h3>3 Months Before...</h3>
+										<div class="date">${client.month3}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c28"
 							<c:if test="${c28 == '1' }" >checked</c:if>>Book
@@ -236,6 +245,7 @@
 
 
 					<h3>2 Months Before...</h3>
+					<div class="date">${client.month2}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c29"
 							<c:if test="${c29 == '1' }" >checked</c:if>>Address,
@@ -251,6 +261,7 @@
 
 				<div class="col-md-3 col-sm-5 col-xs-12 checklist">
 					<h3>6 Weeks Before...</h3>
+					<div class="date">${client.week6}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c31"
 							<c:if test="${c31 == '1' }" >checked</c:if>>Purchase
@@ -266,6 +277,7 @@
 
 
 					<h3>4 Weeks Before...</h3>
+					<div class="date">${client.week4}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c33"
 							<c:if test="${c33 == '1' }" >checked</c:if>>Finalize DIY
@@ -276,6 +288,7 @@
 
 
 					<h3>2 Weeks Before</h3>
+					<div class="date">${client.week2}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c34"
 							<c:if test="${c34 == '1' }" >checked</c:if>>Get Local
@@ -303,8 +316,9 @@
 					</div>
 					<hr>
 
-
+						
 					<h3>WEDDING DAY!!!</h3>
+					<div class="date">${client.weddingDate}</div>
 					<div class="checkbox ">
 						<label><input type="checkbox" value="1" name="c39"
 							<c:if test="${c39 == '1' }" >checked</c:if>>Have Friend

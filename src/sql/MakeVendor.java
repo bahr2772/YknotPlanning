@@ -48,6 +48,7 @@ public class MakeVendor {
 				ven.setProfileImg(r1.getString("profileImg"));		
 				ven.setStartingPackage(r1.getString("startingPackage"));
 				ven.setMaxPackage(r1.getString("topPackage"));
+				ven.setAbout(r1.getString("about"));
 
 
 			}

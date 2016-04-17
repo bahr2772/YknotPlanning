@@ -99,6 +99,9 @@
 						<c:if test="${businessWebsite != null}">
 							<c:out value="${businessWebsite}" />
 						</c:if>
+						<c:if test="${about != null}">
+							<c:out value="${about}" />
+						</c:if>
 						<c:set var="vLogin" value="" />
 					</div>
 				</c:if>
@@ -301,14 +304,21 @@
 							</div>
 						</div>
 					</div>
-			</div>
-			<div class="col-sm-offset-5 col-sm-10">
-				<button type="submit" class="btn btn-lg btn-info">Submit</button>
+					<div class="col-sm-12 form-group">
+						<label>About Your Business</label>
+
+						<textarea class="form-control" rows="3" name="about"
+							placeholder="Say a little about your business... Max 250 characters"><c:if test="${vendor.about != null}">${vendor.about}</c:if></textarea>
+					</div>
+
+					<div class="col-sm-6 form-group"></div>
+					<div class="col-sm-offset-5 col-sm-10">
+						<button type="submit" class="btn btn-lg btn-info">Submit</button>
+					</div>
+
+				</form>
 			</div>
 		</div>
-		</form>
-	</div>
-	</div>
 	</div>
 
 

@@ -3,6 +3,9 @@ package login;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +24,7 @@ import model.Vendor;
 import sql.GetInfo;
 import sql.MakeClient;
 import sql.MakeVendorList;
+import sun.util.calendar.CalendarDate;
 
 /**
  * Servlet implementation class LoginServlet
@@ -111,8 +115,10 @@ public class LoginServlet extends HttpServlet {
 				response.addCookie(cookieE);
 				response.addCookie(cookieP);
 			}
+		
+			
 			session.setAttribute("login", "loggedIn");
-			response.sendRedirect("client.jsp");
+			response.sendRedirect("budgetsurvey.jsp");
 			return ; 
 
 

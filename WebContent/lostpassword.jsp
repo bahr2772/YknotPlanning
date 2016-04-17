@@ -55,7 +55,7 @@
 								aria-hidden="true"></span> <span class="sr-only">Error:</span>
 							Sorry Email not found. Would you like to <a href="join.jsp">
 								Register?</a>
-							<c:set var="lostPass" value="" />
+							<c:remove var="lostPass" scope="session" />
 						</div>
 					</c:if>
 				</div>
@@ -64,7 +64,7 @@
 						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <span
 							class="sr-only">Error:</span> Check you Email, we were pretty
 						successful in finding your password.
-						<c:set var="lostPass" value="" />
+						<c:remove var="lostPass" scope="session" />
 					</div>
 				</c:if>
 

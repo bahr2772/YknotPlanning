@@ -41,10 +41,13 @@
 	<header class="business-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
+				<div class="col-lg-4">
+				</div>
+				<div class="col-lg-4">
 					<a href="index.jsp"> <img alt="Yknot Planning"
 						src="./images/logo.png" id="logoMain"></a>
 				</div>
+				<div class="col-lg-4"></div>
 			</div>
 		</div>
 	</header>
@@ -55,7 +58,8 @@
 
 
 		<div class="row" id="IndexBody">
-			<div class="">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-9">
 				<h2>We all could use a Little help in planning our Special Day</h2>
 				<hr>
 				<p>Yknot let us Give you a Hand</p>
@@ -64,6 +68,7 @@
 						&raquo;</a>
 				</c:if>
 			</div>
+			<div class="col-lg-2"></div>
 		</div>
 		<!-- /.row -->
 

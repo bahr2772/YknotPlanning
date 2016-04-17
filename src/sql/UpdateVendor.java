@@ -9,7 +9,7 @@ public class UpdateVendor {
 	public void updateVendor(String email, String businessName, String businessEmail,
 				String category,  String city, String state, String zip, String businessWebsite
 				, String facebook, String instagram, String pintrest, String twitter, String youtube, 
-				String startingPackage, String topPackage, String profileImg){
+				String startingPackage, String topPackage, String profileImg, String about){
 
 		try {
 			
@@ -19,8 +19,8 @@ public class UpdateVendor {
 
 			// the mysql insert statement
 			String query = "UPDATE vendorProfile SET businessName = ?, businessEmail = ?, city = ?, state = ?, zip = ?, category = ?, "
-					+ "facebook = ?, instagram = ?, pintrest = ?, twitter = ? youtube = ?, startingPackage = ?"
-					+ ", topPackage = ?, profileImg = ? WHERE email = ?";
+					+ "facebook = ?, instagram = ?, pintrest = ?, twitter = ?, youtube = ?, startingPackage = ?,"
+					+ "topPackage = ?, profileImg = ?, about = ? WHERE vendorProfile.email = ?";
 
 			
 
@@ -40,7 +40,9 @@ public class UpdateVendor {
 			preparedStmt.setString (12, startingPackage);
 			preparedStmt.setString (13, topPackage);
 			preparedStmt.setString (14, profileImg);
-			preparedStmt.setString (15, email);
+			preparedStmt.setString (15, about);
+			preparedStmt.setString (16, email);
+			
 
 			 preparedStmt.executeUpdate();
 		       

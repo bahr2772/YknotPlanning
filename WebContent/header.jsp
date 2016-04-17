@@ -72,13 +72,15 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="client.jsp">Home <span
+					<li class="active"><a href="budgetsurvey.jsp">Home <span
 							class="sr-only">(current)</span></a></li>
 					<li><a href="VendorMatchesServlet">Vendor Matches</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">Categories <span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="client.jsp">View All Vendors</a></li>
+							<li role="separator" class="divider"></li>
 							<li><a href="Search?u=photographer">Photographer's</a></li>
 							<li><a href="Search?u=videographer">Videoagrapher's</a></li>
 							<li><a href="Search?u=photobooth">Photo Booths</a></li>
@@ -111,7 +113,7 @@
 							<li><a href="editprofile.jsp">Edit Profile</a></li>
 							<li><a href="budgetsurvey.jsp">Budget Survey</a></li>
 							<li><a href="weddingchecklist.jsp">Wedding Checklist</a></li>
-							<li><a href="favoritevendors.jsp">Favorite Vendors</a></li>
+							<!-- 							<li><a href="favoritevendors.jsp">Favorite Vendors</a></li> -->
 							<li role="separator" class="divider"></li>
 						</ul></li>
 				</ul>

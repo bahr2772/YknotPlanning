@@ -19,35 +19,51 @@
 
 	<!-- Page Content -->
 	<div class="container-fluid">
-		<h1 class="" id="join">Budget Survey</h1>
+		
+		<c:if test="${client.budget == '0' }">
+		<h1 class="" id="join">Welcome ${client.firstName}</h1>
 		<blockquote>
-			What is a budget survey? <br>Well...just what you think it would
-			be, a guide to help you with your wedding. <br>How does it help
-			me here? Well, we will take it and find vendors that match the style
-			you select, the budget you set, and coming soon...matched only to
-			those vendors that are available on your wedding day... <br> <br>
-
+		Welcome.....<br>
+		Looks like this is your first time here. <br>
+		Enter your max budget and we will help match you up with vendors that can work within it. <br> <br>
 
 		</blockquote>
+		
+		</c:if>
+		
+		<c:if test="${client.budget != '0' }">
+		<h1 class="" id="join">Welcome Back ${client.firstName}</h1>
+		<blockquote>
+		Welcome.....<br>
+		Looks like you've been here before. <br>
+		Update your max budget or just hit go, and we will do our thing again.<br> <br>
+
+		</blockquote>
+		
+		</c:if>
+		
+		
+		
 		<div class="col-lg-12 ">
 			<div class="row">
-				<div class="col-md-4 budget">
-					<h3>
-						* Have 5 - 10 minutes? Take it now, and we will walk with you. <br>
-					</h3>
-					<a href="budgetsurveystart.jsp"><button type="button"
-							class="btn btn-lg btn-info">Start Budget Survey</button></a>
-				</div>
+<!-- 				<div class="col-md-4 budget"> -->
+<!-- 					<h3> -->
+<!-- 						* Have 5 - 10 minutes? Take it now, and we will walk with you. <br> -->
+<!-- 					</h3> -->
+<!-- 					<a href="budgetsurveystart.jsp"><button type="button" -->
+<!-- 							class="btn btn-lg btn-info">Start Budget Survey</button></a> -->
+<!-- 				</div> -->
 				<div class="col-md-4"></div>
 
 				<c:if test="${client.budget == '0' }">
 					<div class="col-md-4 budget">
-						<h3>
-							* Short on time?<br>Give us your max budget and we will get
-							vendors that are just in your budget...<br>
-						</h3>
+<!-- 						<h3> -->
+<!-- 							* Short on time?<br>Give us your max budget and we will get -->
+<!-- 							vendors that are just in your budget...<br> -->
+<!-- 						</h3> -->
 						<form action="BudgetMakerServlet" method="POST">
 							<div class="input-group">
+							 
 								<input type="text" class="form-control"
 									placeholder="Enter your Max Budget.." name="maxbudget">
 								<span class="input-group-btn">

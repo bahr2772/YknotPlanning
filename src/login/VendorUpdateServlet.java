@@ -49,6 +49,7 @@ public class VendorUpdateServlet extends HttpServlet {
 		String businessProfile = request.getParameter("profileImg");
 		String startingPackage = request.getParameter("startingPackage");
 		String topPackage = request.getParameter("topPackage");
+		String about = request.getParameter("about");
 
 		boolean nullChecker = false;
 
@@ -81,38 +82,45 @@ public class VendorUpdateServlet extends HttpServlet {
 			session.setAttribute("category", "Vendor Category");
 			nullChecker = true;
 		}
+		if(about.length() > 255){
+			session.setAttribute("about", "About is greater than 250 characters");
+			nullChecker = true;
+		}
 
 
 		Vendor vendor = new Vendor();
 
-			vendor.setEmail(email);
-			vendor.setBusinessName(businessName);
-			vendor.setBusinessEmail(businessEmail);
-			vendor.setCity(city);
-			vendor.setState(state);
-			vendor.setZip(zip);
-			vendor.setCategory(category);
-			vendor.setBusinessWebsite(businessWebsite);
-			vendor.setFacebook(businessFacebook);
-			vendor.setInstagram(businessInstagram);
-			vendor.setPintrest(businessPintrest);
-			vendor.setTwitter(businessTwitter);
-			vendor.setYoutube(businessYoutube);
-			vendor.setProfileImg(businessProfile);
-			vendor.setStartingPackage(startingPackage);
-			vendor.setMaxPackage(topPackage);
+		vendor.setEmail(email);
+		if(businessName.contains("'"))
+			businessName = businessName.replace("'", "\'");
+		vendor.setBusinessName(businessName);
+		vendor.setBusinessEmail(businessEmail);
+		vendor.setCity(city);
+		vendor.setState(state);
+		vendor.setZip(zip);
+		vendor.setCategory(category);
+		vendor.setBusinessWebsite(businessWebsite);
+		vendor.setFacebook(businessFacebook);
+		vendor.setInstagram(businessInstagram);
+		vendor.setPintrest(businessPintrest);
+		vendor.setTwitter(businessTwitter);
+		vendor.setYoutube(businessYoutube);
+		vendor.setProfileImg(businessProfile);
+		vendor.setStartingPackage(startingPackage);
+		vendor.setMaxPackage(topPackage);
+		vendor.setAbout(about);
 
 		if (nullChecker) {
 			response.sendRedirect("vendorprofile.jsp");
 			session.setAttribute("vpro", "error");
 			return;
 		}
-		
+
 		UpdateVendor update = new UpdateVendor();
-		update.updateVendor(email, businessName, businessEmail, category, city, state, zip, businessWebsite, businessFacebook, businessInstagram, businessPintrest, businessTwitter, businessYoutube, startingPackage, topPackage, businessProfile);
-		
+		update.updateVendor(email, businessName, businessEmail, category, city, state, zip, businessWebsite, businessFacebook, businessInstagram, businessPintrest, businessTwitter, businessYoutube, startingPackage, topPackage, businessProfile, about);
+
 		session.setAttribute("vendor", vendor);
-		
+
 		session.setAttribute("vpro", "success");
 		response.sendRedirect("vendorprofile.jsp");
 

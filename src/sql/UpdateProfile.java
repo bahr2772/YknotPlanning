@@ -28,7 +28,7 @@ public class UpdateProfile {
 			preparedStmt.setString (4, state);
 			preparedStmt.setString (5, zip);
 			preparedStmt.setString (6, role);
-			
+
 			
 			java.util.Date result = new java.util.Date(weddingDate);
 			java.sql.Date dataSql = new java.sql.Date(result.getTime());

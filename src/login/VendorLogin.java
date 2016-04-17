@@ -32,7 +32,6 @@ public class VendorLogin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	System.out.println("Vendor login");
 		
 		GetInfo check = new GetInfo();
 		
@@ -79,7 +78,7 @@ public class VendorLogin extends HttpServlet {
 			
 			if (useCookies){								// user has chosen to be remembered
 				Cookie cookieE = new Cookie("vendoremail",email);
-				Cookie cookieP = new Cookie("vendorpassword",password);
+				Cookie cookieP = new Cookie("vendorpass",password);
 				cookieE.setMaxAge(60*60*24); 				// expires after 24 hours
 				cookieP.setMaxAge(60*60*24); 				// expires after 24 hours
 				response.addCookie(cookieE);

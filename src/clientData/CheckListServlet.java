@@ -59,6 +59,12 @@ public class CheckListServlet extends HttpServlet {
 		user.setChecklist(checklist);
 		
 		
+		java.util.Date result = new java.util.Date(user.getWeddingDate());
+		java.sql.Date dataSql = new java.sql.Date(result.getTime());
+		
+		DateSetter set = new DateSetter();
+		set.dates(user, dataSql);
+		
 		
 		
 		for(int i = 0; i < user.getChecklist().length(); i++){

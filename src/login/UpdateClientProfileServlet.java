@@ -17,20 +17,20 @@ import sql.UpdateProfile;
 @WebServlet("/UpdateClientProfileServlet")
 public class UpdateClientProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UpdateClientProfileServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public UpdateClientProfileServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String email = request.getParameter("email");
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
@@ -41,12 +41,12 @@ public class UpdateClientProfileServlet extends HttpServlet {
 		String weddingDate = request.getParameter("weddingDate");
 
 		UpdateProfile update = new UpdateProfile();
-		
-		update.updateProfile(email, firstName, lastName, role, weddingDate, city, state, zip);
-		
 
-		 User user = (User) request.getSession().getAttribute("client");
-		
+		update.updateProfile(email, firstName, lastName, role, weddingDate, city, state, zip);
+
+
+		User user = (User) request.getSession().getAttribute("client");
+
 		user.setEmail(email);
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
@@ -54,14 +54,18 @@ public class UpdateClientProfileServlet extends HttpServlet {
 		user.setState(state);
 		user.setZip(zip);
 		user.setRole(role);
-		user.setWeddingDate(weddingDate);
+		
+		if(weddingDate != null)
+			user.setWeddingDate(weddingDate);
+		else
+			user.setWeddingDate("0000-00-00 00:00:00");
 		
 		request.getSession().setAttribute("client", user);
-		
-		
+
+
 		request.getSession().setAttribute("update", "yes");
-		
-		
+
+
 		response.sendRedirect("editprofile.jsp");
 		return;
 	}

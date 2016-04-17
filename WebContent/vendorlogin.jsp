@@ -36,8 +36,8 @@
 		<c:if test="${cookies.key eq 'vendoremail'}">
 			<c:set var="vendoremailCookie" value="${cookies.value.value}" />
 		</c:if>
-		<c:if test="${cookies.key eq 'vendorpassword'}">
-			<c:set var="vendorpassCookie" value="${cookies.value.value}" />
+		<c:if test="${cookies.key eq 'vendorpass'}">
+			<c:set var="vendorpasswordCookie" value="${cookies.value.value}" />
 		</c:if>
 	</c:forEach>
 	<c:if test="${sessionScope.login == 'loggedIn' }">
@@ -78,19 +78,25 @@
 
 					<form class="form-horizontal" action="VendorLogin" method="post">
 
+
+
 						<div class="form-group">
 							<label for="loginUsername" class="col-sm-5  control-label">Email</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" id="loginUsername"
-									placeholder="Email" name="email">
+								<input type="text" class="form-control" name="email" id="loginUsername"
+									<c:if test="${vendoremailCookie!=null}">value="<c:out value="${vendoremailCookie}"/>"</c:if>
+									<c:if test="${vendoremailCookie==null}"> placeholder="Enter email here.." </c:if>>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="loginPassword" class="col-sm-5 control-label">Password</label>
 							<div class="col-sm-7">
-								<input type="password" class="form-control" id="loginPassword"
-									placeholder="Password" name="password">
+								<input type="text" class="form-control" name="password" id="loginUsername"
+									<c:if test="${vendorpasswordCookie!=null}">value="<c:out value="${vendorpasswordCookie}"/>"</c:if>
+									<c:if test="${vendorpasswordCookie==null}"> placeholder="Enter password here.." </c:if>>
 							</div>
+
+
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-12">
@@ -98,8 +104,8 @@
 									<label> <input type="checkbox" name="box"
 										value="remember"
 										<c:if test="${vendoremailCookie!=null}">checked</c:if>>
-										Remember me<br>
-									<br> <a href="lostpassword.jsp?type=vendor" id="lostPass">lost
+										Remember me<br> <br> <a
+										href="lostpassword.jsp?type=vendor" id="lostPass">lost
 											password?</a>
 										<div class="col-sm-offset-2 col-sm-10">
 											<br>

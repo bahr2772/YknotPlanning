@@ -53,7 +53,7 @@ public class VendorRegisterServlet extends HttpServlet {
 		String businessProfile = request.getParameter("profileImg");
 		String startingPackage = request.getParameter("startingPackage");
 		String topPackage = request.getParameter("topPackage");
-		
+		String about = request.getParameter("about");
 		
 		session.setAttribute("email", null);
 		session.setAttribute("password1", null);
@@ -66,7 +66,7 @@ public class VendorRegisterServlet extends HttpServlet {
 		session.setAttribute("category", null);
 		session.setAttribute("businessWebsite", null);
 		session.setAttribute("businessFacebook", null);
-		
+		session.setAttribute("about", null);
 		boolean nullChecker = false;
 
 		if (email == null || email.isEmpty()) {
@@ -105,10 +105,10 @@ public class VendorRegisterServlet extends HttpServlet {
 			session.setAttribute("category", "Vendor Category");
 			nullChecker = true;
 		}
-//		if (businessWebsite == null || businessWebsite.isEmpty()) {
-//			session.setAttribute("businessWebsite", "Business Website");
-//			nullChecker = true;
-//		}
+		if (about.length() > 250) {
+			session.setAttribute("about", "about greater than 250");
+			nullChecker = true;
+		}
 
 		
 		Vendor vendor = new Vendor();
@@ -164,6 +164,9 @@ public class VendorRegisterServlet extends HttpServlet {
 		if (businessProfile.length() > 1) {
 			vendor.setMaxPackage(topPackage);
 		}
+		if (about.length() > 1) {
+			vendor.setAbout(about);
+		}
 		
 		request.getSession().setAttribute("vendor", vendor);
 
@@ -173,44 +176,45 @@ public class VendorRegisterServlet extends HttpServlet {
 			session.setAttribute("vLogin", "error");
 			return;
 		}
-
+		if(businessProfile == "")
+			businessProfile = "https://image.freepik.com/free-icon/multiple-users-silhouette_318-49546.png";
 		
 		
 		GetInfo info = new GetInfo();
 		int value = info.newVendor(password1, password2, email, businessName, businessEmail, city, state, zip, category,
 				businessWebsite, businessFacebook, businessInstagram, businessPintrest, businessYoutube, businessTwitter, businessProfile,
-				startingPackage, topPackage);
+				startingPackage, topPackage, about);
 
 		switch (value) {
 
 		// user name is in DB,
 		case 1:
 			session.setAttribute("vLogin", "userInDb");
-			response.sendRedirect("join.jsp");
+			response.sendRedirect("vendorjoin.jsp");
 			return;
 
 		// user name not in DB, user name less then 4 characters
 		case 2:
 			session.setAttribute("vLogin", "userTooSmall");
-			response.sendRedirect("join.jsp");
+			response.sendRedirect("vendorjoin.jsp");
 			return;
 
 		// user password to small
 		case 3:
 			session.setAttribute("vLogin", "passTooSmall");
-			response.sendRedirect("join.jsp");
+			response.sendRedirect("vendorjoin.jsp");
 			return;
 
 		// user name not in DB, longer then 4, passwords match
 		case 4:
 			session.setAttribute("vLogin", "passfail");
-			response.sendRedirect("join.jsp");
+			response.sendRedirect("vendorjoin.jsp");
 			return;
 
 		// email not valid or blank
 		case 5:
 			session.setAttribute("vLogin", "emailFail");
-			response.sendRedirect("join.jsp");
+			response.sendRedirect("vendorjoin.jsp");
 			return;
 
 		// all good, user registered
@@ -222,7 +226,7 @@ public class VendorRegisterServlet extends HttpServlet {
 		default:
 			session.setAttribute("vLogin", "error");
 			session.setAttribute("login", "null");
-			response.sendRedirect("join.jsp");
+			response.sendRedirect("vendorjoin.jsp");
 			return;
 		}
 	}

@@ -15,8 +15,8 @@ public class FindVendorMatches {
 		double hmuMax = bud.getTotal()*.03;
 		double caterMin	= bud.getRecepMin()*.15;
 		double caterMax = bud.getRecepMax()*.25;
-		double recepVenMin = bud.getRecepMin()*.07;
-		double recepVenMax = bud.getRecepMax()*.15;
+		double recepVenMin = bud.getRecepMin()*.12;
+		double recepVenMax = bud.getRecepMax()*.20;
 		double offMin	= bud.getMiscMin()*.005;
 		double offMax =	bud.getMiscMax()*.02;
 		
@@ -45,7 +45,7 @@ public class FindVendorMatches {
 				vendorMatches.add(ven);
 			if(ven.getCategory().equalsIgnoreCase("catering") && venStart <= caterMin & caterMax <= venMax)
 				vendorMatches.add(ven);
-			if(ven.getCategory().equalsIgnoreCase("reception venue") && venStart <= recepVenMin && recepVenMax <= venMax)
+			if(ven.getCategory().equalsIgnoreCase("Ceremony & Reception Venue") && venStart <= recepVenMin && recepVenMax <= venMax)
 				vendorMatches.add(ven);
 			if(ven.getCategory().equalsIgnoreCase("florist") && venStart <= bud.getFlowersAvg() && bud.getFlowersAvg() <= venMax)
 				vendorMatches.add(ven);

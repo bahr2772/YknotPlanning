@@ -9,18 +9,20 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
+import clientData.DateSetter;
 import model.User;
 import model.Vendor;
 
 public class MakeClient {
 
-	
-	
-	
+
+
+
 	public User clientInfo(String clientEmail, User user) {
 
-//		ArrayList<User> client = new ArrayList<User>();
+		//		ArrayList<User> client = new ArrayList<User>();
 
 
 		try
@@ -29,7 +31,7 @@ public class MakeClient {
 			Connection conn = DriverManager.getConnection(DbLogin.myUrl,  DbLogin.SQLuser, DbLogin.SQLpass);
 
 			PreparedStatement st = conn.prepareStatement("SELECT * FROM clientProfile P, checklist L  WHERE P.email = ? AND L.email = ?");
-			
+
 			st.setString(1, clientEmail);
 			st.setString(2, clientEmail);
 
@@ -50,13 +52,15 @@ public class MakeClient {
 				user.setBudget(r1.getString("budget"));
 				Date date = r1.getDate("weddingDate"); 
 				DateFormat df = new SimpleDateFormat("EEEE MMMM dd, yyyy");
-				String text = df.format(date);
-				
-				user.setWeddingDate(text);
 
-//				client.add(user);
+				if(date != null){
+					String text = df.format(date);
+					user.setWeddingDate(text);
+					DateSetter set = new DateSetter();
+					set.dates(user, date);
+				}
 				
-				
+
 
 
 			}

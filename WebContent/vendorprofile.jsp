@@ -288,18 +288,23 @@
 								<label>Top Package*</label> <input type="text"
 									placeholder="Enter your Highest Package amount"
 									name="topPackage" class="form-control"
-									value='<c:if test="${vendor.maxPackage != null}">${vendor.maxPackage }</c:if>'>
+									value='<c:if test="${vendor.maxPackage != null}">${vendor.maxPackage}</c:if>'>
 							</div>
 						</div>
 					</div>
-			</div>
+					<div class="col-sm-12 form-group">
+						<label>About Your Business</label>
+
+						<textarea class="form-control" rows="3" name="about"
+							placeholder="Say a little about your business... Max 250 characters" ">${vendor.about}</textarea>
+					</div>
+			
 			<div class="col-sm-offset-5 col-sm-10">
 				<button type="submit" class="btn btn-lg btn-info">Update</button>
 			</div>
-		</div>
+		
 		</form>
-	</div>
-	</div>
+		</div>
 	</div>
 
 

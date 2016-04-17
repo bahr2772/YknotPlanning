@@ -5,7 +5,7 @@ public class MkVendor  {
 
 	public  synchronized void writeSql(String password, String email, String businessName, String businessEmail, String city, 
 			String state, String zip, String category, 	String businessWebsite, String businessFacebook, String businessInstagram,
-			String businessPintrest,String businessYoutube, String businessTwitter, String businessProfile, String startingPackage, String topPackage){
+			String businessPintrest,String businessYoutube, String businessTwitter, String businessProfile, String startingPackage, String topPackage, String about){
 
 		try {
 			// create a mysql database connection
@@ -25,8 +25,8 @@ public class MkVendor  {
 			
 			
 			String query2 = " INSERT INTO vendorProfile (email, businessName, businessEmail, city, state, zip, category, businessWebsite,"
-					+ "facebook, instagram, pintrest, youtube, twitter, profileImg, startingPackage, topPackage)"
-					+ " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+					+ "facebook, instagram, pintrest, youtube, twitter, profileImg, startingPackage, topPackage, about)"
+					+ " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			
 			// create the mysql insert prepared statement
@@ -48,6 +48,8 @@ public class MkVendor  {
 			preparedStmt2.setString (14, businessProfile);
 			preparedStmt2.setString (15, startingPackage);
 			preparedStmt2.setString (16, topPackage);
+			preparedStmt2.setString (17, about);
+
 
 			
 			

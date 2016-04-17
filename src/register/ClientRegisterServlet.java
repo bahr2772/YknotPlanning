@@ -17,14 +17,14 @@ import sql.GetInfo;
 @WebServlet("/ClientRegisterServlet")
 public class ClientRegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ClientRegisterServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ClientRegisterServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -43,15 +43,23 @@ public class ClientRegisterServlet extends HttpServlet {
 		String role = request.getParameter("role");
 		String weddingDate = request.getParameter("weddingDate");
 
+
+
+
 		User user = new User();
-		
+
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 		user.setCity(city);
 		user.setState(state);
 		user.setZip(zip);
 		user.setRole(role);
-		user.setWeddingDate(weddingDate);
+
+		if(weddingDate == "")
+			user.setWeddingDate("0000-00-00 00:00:00");
+		else
+			user.setWeddingDate(weddingDate);
+
 		user.setPassword(password1);
 		user.setEmail(email);
 
@@ -98,7 +106,7 @@ public class ClientRegisterServlet extends HttpServlet {
 		case 6:
 			session.setAttribute("login", "loggedIn");
 			session.setAttribute("email", email);
-			response.sendRedirect("client.jsp");
+			response.sendRedirect("budgetsurvey.jsp");
 			return;
 
 		default:
