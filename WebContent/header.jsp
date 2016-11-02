@@ -7,7 +7,7 @@
 <head>
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.js"></script>
+<script src="https://unpkg.com/masonry-layout@4.0/dist/masonry.pkgd.js"></script>
 
 <!-- Custom CSS -->
 <link href='https://fonts.googleapis.com/css?family=Mate+SC'
